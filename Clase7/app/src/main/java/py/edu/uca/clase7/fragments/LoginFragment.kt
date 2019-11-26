@@ -32,7 +32,8 @@ class LoginFragment : Fragment() {
         }
 
         registrarse_button.setOnClickListener {
-            Toast.makeText(context, "Registrarse", Toast.LENGTH_LONG).show()
+            val action = LoginFragmentDirections.actionLoginFragmentToRegistroFragment()
+            findNavController().navigate(action)
         }
 
     }

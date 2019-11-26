@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
 
-    <TextView
-        android:id="@+id/nombre_pelicula"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center"
-        android:textSize="16sp"/>
+        android:layout_height="300dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="8dp">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imagen_pelicula"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/promo"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/nombre_pelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El Rey León"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:layout_margin="20dp"/>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
