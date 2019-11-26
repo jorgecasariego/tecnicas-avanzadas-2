@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:id="@+id/imagen_pelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rambo"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/nombre_pelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rambo - La Pelicula"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:layout_margin="20dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

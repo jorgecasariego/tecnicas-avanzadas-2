@@ -13,7 +13,8 @@ interface PeliculaInterface {
     fun peliculaClicked(pelicula: Pelicula)
 }
 
-class PeliculaAdapter(val peliculas: ArrayList<Pelicula>, val listener: PeliculaInterface) : RecyclerView.Adapter<PeliculaAdapter.PeliculaHolder>() {
+class PeliculaAdapter(val peliculas: ArrayList<Pelicula>, val listener: PeliculaInterface)
+    : RecyclerView.Adapter<PeliculaAdapter.PeliculaHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeliculaAdapter.PeliculaHolder {
         val inflatedView = parent.inflate(R.layout.pelicula_item_row, false)
