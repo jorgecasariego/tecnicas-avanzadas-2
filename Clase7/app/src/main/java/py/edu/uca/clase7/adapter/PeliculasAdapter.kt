@@ -12,6 +12,7 @@ import py.edu.uca.clase7.model.Pelicula
 class PeliculasAdapter (val context: Context, val peliculas: ArrayList<Pelicula>
 ): RecyclerView.Adapter<PeliculasAdapter.PeliculaHolder>() {
 
+    // 1. Inicializamos el ViewHolder pasandole el layout que el adaptor usará para crear las vistas
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeliculaHolder {
         val view =
             LayoutInflater
@@ -20,8 +21,10 @@ class PeliculasAdapter (val context: Context, val peliculas: ArrayList<Pelicula>
         return PeliculaHolder(view)
     }
 
+    // EL adaptador sabe cuantas peliculas hay
     override fun getItemCount() = peliculas.size
 
+    // Este metodo se usa para configurar el contenido de las vistas en la posicion "position"
     override fun onBindViewHolder(holder: PeliculaHolder, position: Int) {
         val pelicula = peliculas[position]
         holder.bindPelicula(pelicula)
