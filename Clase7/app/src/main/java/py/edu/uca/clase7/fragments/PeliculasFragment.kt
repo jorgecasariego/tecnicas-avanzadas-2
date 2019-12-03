@@ -37,5 +37,18 @@ class PeliculasFragment : Fragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        if (peliculas.isEmpty()) {
+            peliculas.add(Pelicula("Rambo", ""))
+            peliculas.add(Pelicula("Titanic", ""))
+            peliculas.add(Pelicula("The Joker", ""))
+            peliculas.add(Pelicula("Avenger", ""))
+            peliculas.add(Pelicula("25 sombras de Grey", ""))
+            adapter.notifyItemInserted(peliculas.size - 1)
+        }
+    }
+
 
 }
