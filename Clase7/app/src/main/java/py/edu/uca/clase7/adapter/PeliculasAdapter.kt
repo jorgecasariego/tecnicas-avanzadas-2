@@ -30,6 +30,7 @@ class PeliculasAdapter (val context: Context, val peliculas: ArrayList<Pelicula>
         holder.bindPelicula(pelicula)
     }
 
+    // El siguiente paso será bajar la librería para mostrar fotos
     class PeliculaHolder(val v: View): RecyclerView.ViewHolder(v) {
         fun bindPelicula(pelicula: Pelicula) {
             v.nombre_pelicula.text = pelicula.nombre
