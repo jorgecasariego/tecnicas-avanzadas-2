@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pelicula_item_row.view.*
 import py.edu.uca.clase7.R
 import py.edu.uca.clase7.model.Pelicula
@@ -34,6 +35,7 @@ class PeliculasAdapter (val context: Context, val peliculas: ArrayList<Pelicula>
     class PeliculaHolder(val v: View): RecyclerView.ViewHolder(v) {
         fun bindPelicula(pelicula: Pelicula) {
             v.nombre_pelicula.text = pelicula.nombre
+            Picasso.get().load(pelicula.url).into(v.imagen_pelicula)
         }
     }
 }

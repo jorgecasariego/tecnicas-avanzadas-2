@@ -41,11 +41,11 @@ class PeliculasFragment : Fragment() {
         super.onStart()
 
         if (peliculas.isEmpty()) {
-            peliculas.add(Pelicula("Rambo", ""))
-            peliculas.add(Pelicula("Titanic", ""))
-            peliculas.add(Pelicula("The Joker", ""))
-            peliculas.add(Pelicula("Avenger", ""))
-            peliculas.add(Pelicula("25 sombras de Grey", ""))
+            peliculas.add(Pelicula("Rambo", "https://www.abc.com.py/resizer/GtvbP4JntC6HaTSdfmHqVqwMxcw=/350x225/smart/arc-anglerfish-arc2-prod-abccolor.s3.amazonaws.com/public/AC34LTXAUFGGTEA57RKOEYKNSU.jpg"))
+            peliculas.add(Pelicula("Titanic", "https://s.mxmcdn.net/images-storage/albums5/7/7/4/4/6/1/35164477_350_350.jpg"))
+            peliculas.add(Pelicula("The Joker", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvSbT_O3xHe-nCyfGPd8Rhi_AL3if_XYDi_bfDveWcbBqO3xqxEA&s"))
+            peliculas.add(Pelicula("Avenger", "https://img-cdn.hipertextual.com/files/2019/03/hipertextual-marvel-2019381704.jpg?strip=all&lossy=1&quality=57&resize=740%2C490&ssl=1"))
+            peliculas.add(Pelicula("50 sombras de Grey", "https://www.infobae.com/new-resizer/wKLkJ1_xy7EQ3b3xluYJFr3GLlA=/750x0/filters:quality(100)/arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/3NHY3INMYRBNRHEC2WEVCCASY4"))
             adapter.notifyItemInserted(peliculas.size - 1)
         }
     }
