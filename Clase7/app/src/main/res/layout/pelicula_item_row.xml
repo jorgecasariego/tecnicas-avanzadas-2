@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="20dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp">
 
-        <ImageView
-            android:id="@+id/imagen_pelicula"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/rambo"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/nombre_pelicula"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rambo - La Pelicula"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_gravity="bottom"
-            android:gravity="right"
-            android:layout_margin="20dp"/>
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/imagen_pelicula"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/rambo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/nombre_pelicula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    tools:text="Rambo - La Pelicula"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/estreno_pelicula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Diciembre 11, 2019"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sinopsis_pelicula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    tools:text="Cuenta el origen de uno de los grandes villanos de Batman: El guasón. Intepretado por Joaquin Phoenix y dirigida por Todd Phillips (¿Qué pasó ayer?) "
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
