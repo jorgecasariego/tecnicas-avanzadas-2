@@ -32,13 +32,21 @@ class PeliculaAdapter(val peliculas: ArrayList<Pelicula>, val listener: Pelicula
         private var view: View = v
         private var pelicula: Pelicula? = null
 
+        companion object {
+            val imageUrlBase = "https://image.tmdb.org/t/p/w500"
+        }
+
         fun bindPelicula(
             pelicula: Pelicula,
             listener: PeliculaInterface
         ) {
             this.pelicula = pelicula
-            view.nombre_pelicula.text = pelicula.nombre
-            Picasso.get().load(pelicula.url).into(view.imagen_pelicula)
+            view.nombre_pelicula.text = pelicula.title
+            view.sinopsis_pelicula.text = pelicula.overview
+            view.estreno_pelicula.text = pelicula.release_date
+
+            Picasso.get().load(imageUrlBase + pelicula.poster_path)
+                .into(view.imagen_pelicula)
 
             view.setOnClickListener { listener.peliculaClicked(pelicula) }
         }
