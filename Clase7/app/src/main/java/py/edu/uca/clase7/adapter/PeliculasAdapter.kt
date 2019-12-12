@@ -33,9 +33,15 @@ class PeliculasAdapter (val context: Context, val peliculas: ArrayList<Pelicula>
 
     // El siguiente paso será bajar la librería para mostrar fotos
     class PeliculaHolder(val v: View): RecyclerView.ViewHolder(v) {
+        companion object {
+            val imageUrlBase = "https://image.tmdb.org/t/p/w500"
+        }
+
         fun bindPelicula(pelicula: Pelicula) {
-            v.nombre_pelicula.text = pelicula.nombre
-            Picasso.get().load(pelicula.url).into(v.imagen_pelicula)
+            v.nombre_pelicula.text = pelicula.original_title
+            v.estreno_pelicula.text = pelicula.release_date
+            v.sinopsis_pelicula.text = pelicula.overview
+            Picasso.get().load(imageUrlBase + pelicula.poster_path).into(v.imagen_pelicula)
         }
     }
 }
