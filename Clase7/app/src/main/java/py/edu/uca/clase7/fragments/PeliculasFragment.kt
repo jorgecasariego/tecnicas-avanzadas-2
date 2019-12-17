@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import py.edu.uca.clase7.R
+import py.edu.uca.clase7.adapter.PeliculaInterface
 import py.edu.uca.clase7.adapter.PeliculasAdapter
 import py.edu.uca.clase7.model.Pelicula
 import py.edu.uca.clase7.model.PeliculaResult
@@ -18,7 +19,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PeliculasFragment : Fragment() {
+class PeliculasFragment : Fragment(), PeliculaInterface {
 
     private lateinit var listaPeliculasRv: RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
@@ -41,14 +42,19 @@ class PeliculasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_peliculas, container, false)
+        val view = inflater.inflate(R.layout.fragment_peliculas, container, false)
 
         listaPeliculasRv = view.findViewById(R.id.lista_peliculas)
 
         linearLayoutManager = LinearLayoutManager(requireContext())
         listaPeliculasRv.layoutManager = linearLayoutManager
 
-        adapter = PeliculasAdapter(requireContext(), peliculas as ArrayList<Pelicula>)
+        adapter = PeliculasAdapter(
+            requireContext(),
+            peliculas as ArrayList<Pelicula>,
+            this
+        )
+
         listaPeliculasRv.adapter = adapter
 
         return view
@@ -64,7 +70,11 @@ class PeliculasFragment : Fragment() {
 
         call.enqueue(object : Callback<PeliculaResult> {
             override fun onFailure(call: Call<PeliculaResult>, t: Throwable) {
-                Toast.makeText(requireContext(), "Hubo un error al obtener la pelicula", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Hubo un error al obtener la pelicula",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             override fun onResponse(
@@ -83,6 +93,14 @@ class PeliculasFragment : Fragment() {
             }
 
         })
+    }
+
+    override fun peliculasClicked(pelicula: Pelicula) {
+        Toast.makeText(
+            requireContext(),
+            "Se hizo click en la pelicula con id ${pelicula.id}",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
 }
