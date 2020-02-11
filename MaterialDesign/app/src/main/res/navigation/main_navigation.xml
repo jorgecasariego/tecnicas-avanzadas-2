@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="py.edu.uca.materialdesign.fragments.Fragment1"
+        android:label="fragment_frament1"
+        tools:layout="@layout/fragment_frament1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment11"
+            app:destination="@id/fragment11" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="py.edu.uca.materialdesign.fragments.Fragment2"
+        android:label="fragment_fragment2"
+        tools:layout="@layout/fragment_fragment2" />
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="py.edu.uca.materialdesign.fragments.Fragment3"
+        android:label="fragment_fragment3"
+        tools:layout="@layout/fragment_fragment3" />
+    <fragment
+        android:id="@+id/fragment11"
+        android:name="py.edu.uca.materialdesign.fragments.Fragment11"
+        android:label="fragment_fragment11"
+        tools:layout="@layout/fragment_fragment11" />
+</navigation>

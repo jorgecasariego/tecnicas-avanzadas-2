@@ -8,17 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import py.edu.uca.materialdesign.R
 
-class Frament1 : Fragment() {
-
-    companion object {
-        fun newInstance()= Frament1()
-    }
+/**
+ * A simple [Fragment] subclass.
+ */
+class Fragment11 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_frament1, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_fragment11, container, false)
     }
 
 

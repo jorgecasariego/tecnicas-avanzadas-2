@@ -3,20 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Fragment1">
+    tools:context=".fragments.Fragment11">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment 1"
-        android:textSize="20sp"
-        android:gravity="center" />
-
-    <Button
-        android:id="@+id/ir_frament11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ir al Frament 1.1"/>
+        android:text="Estoy en Frament 1.1" />
 
 </FrameLayout>

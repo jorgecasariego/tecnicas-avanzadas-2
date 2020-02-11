@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_activity.*
-import py.edu.uca.materialdesign.fragments.Fragment2
-import py.edu.uca.materialdesign.fragments.Fragment3
-import py.edu.uca.materialdesign.fragments.Frament1
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,7 +23,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        cambiarFragment(Frament1.newInstance())
+        //cambiarFragment(Fragment1.newInstance())
 
     }
 
@@ -39,9 +37,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when(menu.itemId) {
-            R.id.menu_opcion1 -> cambiarFragment(Frament1.newInstance())
-            R.id.menu_opcion2 -> cambiarFragment(Fragment2.newInstance())
-            R.id.menu_opcion3 -> cambiarFragment(Fragment3.newInstance())
+            R.id.menu_opcion1 -> Navigation.findNavController(this, R.id.nav_host).navigate(R.id.fragment1) //cambiarFragment(Fragment1.newInstance())
+            R.id.menu_opcion2 -> Navigation.findNavController(this, R.id.nav_host).navigate(R.id.fragment2) //cambiarFragment(Fragment2.newInstance())
+            R.id.menu_opcion3 -> Navigation.findNavController(this, R.id.nav_host).navigate(R.id.fragment3) //cambiarFragment(Fragment3.newInstance())
         }
 
 
@@ -50,9 +48,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun cambiarFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.contenedor, fragment)
-            .addToBackStack(null)
-            .commit()
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.contenedor, fragment)
+//            .addToBackStack(null)
+//            .commit()
     }
 }
